@@ -5,7 +5,7 @@
 <label *ngIf="!editMode" class="mt-4 mb-3"><h5>Create Order</h5></label>
 <div>
 
-
+<form  #form="ngForm">
 <table class="d-flex">
     <tr>
         <td>
@@ -13,7 +13,6 @@
         </td>
         <td class="position-relative">
             <input name="id" required [disabled]="editMode" type="text" class="form-control mb-2" [(ngModel)]="productDetails.id" >
-            <small *ngIf="invalidField" style="color: red;" class="position-absolute" > please fill the field</small>
         <small *ngIf="idAlreadyExist" style="color: red;" class="position-absolute"> ID already exist</small>
         </td>
         
@@ -24,7 +23,6 @@
         </td>
         <td class="position-relative">
             <input name="name"  required type="text" class="form-control mb-2" [(ngModel)]="productDetails.name" >
-            <small *ngIf="invalidField" style="color: red;" class="position-absolute"> please fill the field</small>
         </td>
         
     </tr>
@@ -34,7 +32,6 @@
         </td>
         <td class="position-relative">
             <input  name="price"  required  type="number" class="form-control mb-2" [(ngModel)]="productDetails.price" >
-            <small *ngIf="invalidField" style="color: red;" class="position-absolute"> please fill the field</small>
         </td>
         
     </tr>
@@ -51,18 +48,18 @@
 
 
 
-<button  (click)="saveUpdate()" class="border-0 bg-transprant text-end mt-3">
+<button [disabled]="form.form.invalid"  (click)="saveUpdate()" class="border-0 bg-transprant text-end mt-5">
     <span *ngIf="!editMode" class="btn btn-primary text-center">Save</span>
     <span *ngIf="editMode" class="btn btn-secondary text-center">Update</span>
 </button>
-
-
-
-
 <button (click)="cancel()" class="btn btn-success">
     cancel
     
 </button>
+
+</form>
+
+
 
 </div>
         </div>

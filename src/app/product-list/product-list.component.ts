@@ -19,12 +19,6 @@ export class ProductListComponent implements OnInit {
   }
   getOrder() {
     this.products = [];
-    // this.productService.getProducts().subscribe((res:any) =>{
-    //   console.log(res);
-    //   if (res && res.length ) {
-    //     this.products = res;
-    //   }
-    // })
     this.products = this.productService.getOrder()
   }
 
@@ -42,9 +36,6 @@ export class ProductListComponent implements OnInit {
 
   deleteOrder(productId: any) {
     let product = {'id': productId};
-    // this.productService.deleteProduct(product).subscribe((res:any) =>{
-    //   this.getProducts();
-    // });
     this.productService.deleteOrder(product);
     this.getOrder();
   }
