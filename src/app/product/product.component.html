@@ -1,0 +1,99 @@
+<div class="container mt-4">
+    <div class="row justify-content-between align-items-center">
+        <div class="col-12 carbonads pb-4 ps-3">
+            <label *ngIf="editMode" class="mt-4 mb-3"><h5>Edit Order</h5></label>
+<label *ngIf="!editMode" class="mt-4 mb-3"><h5>Create Order</h5></label>
+<div>
+
+
+<table class="d-flex">
+    <tr>
+        <td>
+            <label class="me-2">Id <sup style="color: red;">*</sup></label>
+        </td>
+        <td class="position-relative">
+            <input name="id" required [disabled]="editMode" type="text" class="form-control mb-2" [(ngModel)]="productDetails.id" >
+            <small *ngIf="invalidField" style="color: red;" class="position-absolute" > please fill the field</small>
+        <small *ngIf="idAlreadyExist" style="color: red;" class="position-absolute"> ID already exist</small>
+        </td>
+        
+    </tr>
+    <tr>
+        <td>
+            <label class="me-2 ms-4">Name <sup style="color: red;">*</sup></label>
+        </td>
+        <td class="position-relative">
+            <input name="name"  required type="text" class="form-control mb-2" [(ngModel)]="productDetails.name" >
+            <small *ngIf="invalidField" style="color: red;" class="position-absolute"> please fill the field</small>
+        </td>
+        
+    </tr>
+    <tr>
+        <td>
+            <label class="me-2 ms-4">Price <sup style="color: red;">*</sup></label>
+        </td>
+        <td class="position-relative">
+            <input  name="price"  required  type="number" class="form-control mb-2" [(ngModel)]="productDetails.price" >
+            <small *ngIf="invalidField" style="color: red;" class="position-absolute"> please fill the field</small>
+        </td>
+        
+    </tr>
+    <tr>
+        <td>
+            <label class="me-2 ms-4">Note</label>
+        </td>
+        <td>
+            <input name="note" type="text" class="form-control mb-2" [(ngModel)]="productDetails.note" >
+        </td>
+    </tr>
+</table>
+
+
+
+
+<button  (click)="saveUpdate()" class="border-0 bg-transprant text-end mt-3">
+    <span *ngIf="!editMode" class="btn btn-primary text-center">Save</span>
+    <span *ngIf="editMode" class="btn btn-secondary text-center">Update</span>
+</button>
+
+
+
+
+<button (click)="cancel()" class="btn btn-success">
+    cancel
+    
+</button>
+
+</div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- <form>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Name</label>
+      <input type="text" class="form-control" [(ngModel)]="productDetails.name" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Price</label>
+      <input type="number" [(ngModel)]="productDetails.price" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Note</label>
+        <input type="text" [(ngModel)]="productDetails.note" class="form-control">
+      </div>
+    <div class="" (click)="saveUpdate()">
+    <button type="submit" class="btn btn-secondary" *ngIf="!editMode">Save</button>
+    <button type="submit" class="btn btn-primary" *ngIf="editMode">Update</button>
+    </div>
+    <button (click)="cancel()">
+        cancel
+
+    </button>
+  </form> -->
+
+
+

@@ -1,0 +1,57 @@
+
+  <div *ngIf="editOperation">
+    <app-product [productDetails]="selectedProduct" [editMode]="editMode"
+        (saveEditComplete)="saveUpdateProduct($event)"></app-product>
+</div>
+
+
+<section class="table-sec mt-4">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col"><h4>Orders</h4></div>{{products|json}}
+            <div class="col text-end"><button (click)="createOrder()" class="btn btn-primary">Create Order</button></div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-12 ">
+                <div class="table-customiz mb-3 ">
+                    <div class="card ">
+                        <div class="card-body table-responsive ">
+                            <div class="dataTables_wrapper">
+                                <table class="table table-striped table-bordered mt-2  dataTable" aria-describedby="">
+                                    <thead class="bg-light ">
+                                        <tr class="">
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Price</th>
+                                            <th>Note</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="">
+                                        <!---->
+                                        <tr *ngFor="let product of products">
+                                            <td>{{product.id}}</td>
+                                            <td>{{product.name}}</td>
+                                            <td>{{product.price}}</td>
+                                            <td>{{product.note}}</td>
+                                            <td>
+                                                <a href="javascript:void(0)" (click)="editOrder(product)">Edit</a>
+                                                <a class="ms-2" href="javascript:void(0)"
+                                                    (click)="deleteOrder(product.id)">Delete</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+  
