@@ -3,17 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductService } from './service/product.service';
+import { OrderService } from './service/order.service';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductListComponent } from './product-list/product-list.component';
-import { ProductComponent } from './product/product.component';
+import { OrderListComponent } from './order-list/order-list.component';
+import { OrderComponent } from './order/order.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductListComponent,
-    ProductComponent
+    OrderListComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +21,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [ProductService],
+  providers: [OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

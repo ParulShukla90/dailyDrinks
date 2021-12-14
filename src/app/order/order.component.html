@@ -17,7 +17,7 @@
               </td>
               <td class="position-relative">
                 <input name="id" required [disabled]="editMode" type="text" class="form-control mb-2"
-                  [(ngModel)]="productDetails.id">
+                  [(ngModel)]="orderDetails.id">
                 <small *ngIf="idAlreadyExist" style="color: red;" class="position-absolute"> ID already exist</small>
               </td>
 
@@ -27,7 +27,7 @@
                 <label class="me-2 ms-4">Name <sup style="color: red;">*</sup></label>
               </td>
               <td class="position-relative">
-                <input name="name" required type="text" class="form-control mb-2" [(ngModel)]="productDetails.name">
+                <input name="name" required type="text" class="form-control mb-2" [(ngModel)]="orderDetails.name">
               </td>
 
             </tr>
@@ -36,7 +36,7 @@
                 <label class="me-2 ms-4">Price <sup style="color: red;">*</sup></label>
               </td>
               <td class="position-relative">
-                <input name="price" required type="number" class="form-control mb-2" [(ngModel)]="productDetails.price">
+                <input name="price" required type="number" class="form-control mb-2" [(ngModel)]="orderDetails.price">
               </td>
 
             </tr>
@@ -45,7 +45,7 @@
                 <label class="me-2 ms-4">Note</label>
               </td>
               <td>
-                <textarea name="note" type="text" maxlength="250" class="form-control mb-2" [(ngModel)]="productDetails.note"></textarea>
+                <textarea name="note" type="text" maxlength="250" class="form-control mb-2" [(ngModel)]="orderDetails.note"></textarea>
               </td>
             </tr>
           </table>
@@ -77,15 +77,15 @@
 <!-- <form>
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Name</label>
-      <input type="text" class="form-control" [(ngModel)]="productDetails.name" aria-describedby="emailHelp">
+      <input type="text" class="form-control" [(ngModel)]="orderDetails.name" aria-describedby="emailHelp">
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Price</label>
-      <input type="number" [(ngModel)]="productDetails.price" class="form-control">
+      <input type="number" [(ngModel)]="orderDetails.price" class="form-control">
     </div>
     <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Note</label>
-        <input type="text" [(ngModel)]="productDetails.note" class="form-control">
+        <input type="text" [(ngModel)]="orderDetails.note" class="form-control">
       </div>
     <div class="" (click)="saveUpdate()">
     <button type="submit" class="btn btn-secondary" *ngIf="!editMode">Save</button>

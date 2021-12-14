@@ -1,18 +1,18 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ProductService } from '../service/product.service';
+import { OrderService } from '../service/order.service';
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss']
+  selector: 'app-order',
+  templateUrl: './order.component.html',
+  styleUrls: ['./order.component.scss']
 })
-export class ProductComponent implements OnInit {
-  @Input() productDetails: any;
+export class OrderComponent implements OnInit {
+  @Input() orderDetails: any;
   @Input() editMode: boolean;
   @Output() saveEditComplete: EventEmitter<any> = new EventEmitter();
   idAlreadyExist: boolean=false;
 
-  constructor(private productService: ProductService) { }
+  constructor(private orderService: OrderService) { }
 
 
 
@@ -24,11 +24,11 @@ export class ProductComponent implements OnInit {
   }
   saveUpdate() {
     if (this.editMode) {
-      this.productService.updateOrder(this.productDetails)
+      this.orderService.updateOrder(this.orderDetails)
       this.saveEditComplete.emit(true);
     } else {
-      console.log(this.productDetails)
-      var res=this.productService.createOrder(this.productDetails)
+      console.log(this.orderDetails)
+      var res=this.orderService.createOrder(this.orderDetails)
       if(res==-1){
         this.idAlreadyExist=true
         return

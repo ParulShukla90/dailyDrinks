@@ -1,7 +1,7 @@
 
   <div *ngIf="editOperation">
-    <app-product [productDetails]="selectedProduct" [editMode]="editMode"
-        (saveEditComplete)="saveUpdateProduct($event)"></app-product>
+    <app-order [orderDetails]="selectedOrder" [editMode]="editMode"
+        (saveEditComplete)="saveUpdateOrder($event)"></app-order>
 </div>
 
 
@@ -29,15 +29,15 @@
                                     </thead>
                                     <tbody class="">
                                         <!---->
-                                        <tr *ngFor="let product of products">
-                                            <td>{{product.id}}</td>
-                                            <td>{{product.name}}</td>
-                                            <td>{{product.price}}</td>
-                                            <td>{{product.note}}</td>
+                                        <tr *ngFor="let order of orders">
+                                            <td>{{order.id}}</td>
+                                            <td>{{order.name}}</td>
+                                            <td>{{order.price}}</td>
+                                            <td>{{order.note}}</td>
                                             <td>
-                                                <a href="javascript:void(0)" (click)="editOrder(product)">Edit</a>
+                                                <a href="javascript:void(0)" (click)="editOrder(order)">Edit</a>
                                                 <a class="ms-2" href="javascript:void(0)"
-                                                    (click)="deleteOrder(product.id)">Delete</a>
+                                                    (click)="deleteOrder(order.id)">Delete</a>
                                             </td>
                                         </tr>
                                     </tbody>
