@@ -1,6 +1,8 @@
-# TestApp
+# DailyDrinks
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.12.
+This is a simple Angular application that helps user create order for their favorite drinks.
+Start by running `npm install` in the root folder of the application
 
 ## Development server
 
